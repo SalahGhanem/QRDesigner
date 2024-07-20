@@ -1,107 +1,117 @@
-body{
+body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif; /* إضافة نوع خط افتراضي */
+    background-color: #f4f4f4; /* إضافة خلفية خفيفة */
 }
-.container{
+
+.container {
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-areas:
-      'header header header'
-      'content content content'
-      'footer footer footer';
-    grid-template-rows: 15% 1fr 10%;
-    grid-template-columns: 1fr 5fr 5fr;
+      'header'
+      'content'
+      'footer';
+    grid-template-rows: 80px 1fr 60px; /* تغيير الحجم للثلاثة مناطق */
+    grid-template-columns: 1fr;
     padding: 0;
-  }
-header { 
-    width: 100%;
-    margin: 0;
-    display: flex;
-    grid-area: header;
-    justify-content: center;
-    align-items: center;
-    box-shadow: inset 0px 4px 10px 0px #5e5e5e, 0px 4px 10px 0px #5e5e5e;
-}
-.logo{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.logo-name{
-    font-size: 4em;
-    font-weight: bolder;
-    filter: drop-shadow(0px 2px 2px #414141);
-    margin: 0;
+    position: relative;
 }
 
-.content { 
-    grid-area: content; 
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* تغيير لون الخلفية */
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1); /* تغيير اللون وظل */
+    position: fixed;
+    top: 0;
     width: 100%;
-    height: 100%;
+    height: 10vh;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo-name {
+    font-size: 2.5em; /* تغيير حجم الخط */
+    font-weight: bold;
+    color: #333; /* تغيير لون الخط */
+}
+
+.content {
+    grid-area: content;
     display: grid;
     grid-template-areas:
       'newqr'
       'generatorArea';
-    grid-template-rows: 85% 1fr;
-    padding: 0;
+    grid-template-rows: 1fr 100px; /* تغيير حجم الصفوف */
+    padding: 20px;
 }
-.new-qr{
-    grid-area: newqr; 
-    width: 100%;
 
+.new-qr {
+    grid-area: newqr;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-.generate-container{
+
+.qr-box {
+    width: 100%;
+    max-width: 200px;
+    height: auto; /* تغيير الارتفاع التلقائي للحفاظ على النسبة */
+    max-height: 200px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    border-radius: 10px; /* زيادة تدوير الحواف */
+    background-color: #fff; /* إضافة خلفية بيضاء */
+}
+
+.generate-container {
     grid-area: generatorArea;
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px; /* إضافة تباعد بين الأزرار */
 }
-.qr-box{
-    grid-area: qrbox; 
-    width: 100%; /* جعل العرض يمتد ليملأ الحاوية */
-    height: 100%; /* جعل الارتفاع يمتد ليملأ الحاوية */
-    max-width: 200px; /* تحديد حد أقصى للعرض */
-    max-height: 200px; /* تحديد حد أقصى للارتفاع */
-    box-shadow: inset 0px 4px 10px 0px #5e5e5e, 0px 4px 10px 5px #5e5e5e;
-    border-radius: 3px;
-    overflow: hidden;
-}
-.link{
-    display: inline-block;
-    grid-area: link; 
+
+.link {
     width: 60%;
-    height: 100%;
-    padding: 0;
 }
-.input-link{
+
+.input-link {
     width: 100%;
-    height: 100%;
-    margin: 0;
-    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ddd; /* إضافة حدود ناعمة */
+    border-radius: 5px; /* تدوير زوايا الحقل */
 }
-.generator{
-    grid-area: generator; 
-    display: inline-block;
-    width: 10%;
-    height: 100%;
+
+.generator, .download {
+    background-color: #007bff; /* لون خلفية الأزرار */
+    color: #fff; /* لون نص الأزرار */
+    border: none;
+    border-radius: 5px; /* تدوير زوايا الأزرار */
+    padding: 10px 20px; /* إضافة حشوة */
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s; /* تأثير التغيير عند التمرير */
 }
-.download{
-    grid-area: download; 
-    display: inline-block;
-    width: 10%;
-    height: 100%;
+
+.generator:hover, .download:hover {
+    background-color: #0056b3; /* تغيير اللون عند التمرير */
 }
-footer { 
-    box-shadow: inset 0px 4px 10px 0px #5e5e5e, 0px 4px 10px 5px #5e5e5e;
-    grid-area: footer; 
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* إضافة خلفية */
+    box-shadow: 0px -4px 10px rgba(0,0,0,0.1); /* تغيير اللون وظل */
+    position: fixed ; 
+    bottom: 0px;
+    width: 100%;
 }
