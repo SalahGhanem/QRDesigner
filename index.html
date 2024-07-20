@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <script src="../script/qrcode.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvg@3.0.0/dist/canvg.min.js"></script>
+    <script src="../script/script.js"></script>
+    <title>Qr Designer</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <p class="logo-name">Qr Designer</p>
+            </div>
+        </header>
+        <div class="content">
+<div class="new-qr">
+    <div class="qr-box" id="newQR"></div>
+</div>
+<div class="generate-container">
+<div class="link">
+    <input id="link" type="text" placeholder="Enter your Link" class="input-link">
+</div>
+<button onclick="generateQRCode()" class="generator">Generat</button>
+<button onclick="downloadQR()" class="download">Download</button> <!-- زر تنزيل PNG -->
+<!-- <button onclick="downloadEPS()" class="download">Download EPS</button> -->
+</div>
+        </div>
+        <footer>
+<div class="copyRigth"><p>Devolpe By <a href="https://wa.me/message/CSOPNBXDKIRBE1">Salah Ghanem</a></p></div>
+        </footer>
+    </div>
+</body>
+</html>
